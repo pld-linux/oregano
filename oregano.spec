@@ -38,8 +38,8 @@ rm -f missing
 gettextize --copy --force
 libtoolize --copy --force
 aclocal -I macros
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
