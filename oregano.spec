@@ -39,7 +39,7 @@ rm -rf $RPM_BUILD_ROOT
 	Applicationsdir=%{_applnkdir}/Office/Misc \
 	samplesdir=%{_examplesdir}/%{name}
 
-gzip -9nf ChangeLog NEWS README TODO
+gzip -9nf ChangeLog NEWS README
 
 %find_lang %{name} --with-gnome
 
