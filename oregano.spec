@@ -52,6 +52,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Office/Misc/oregano.desktop
 %{_datadir}/mime-info/*
-%{_datadir}/pixmaps/*
+%{_pixmapsdir}/*
 %{_datadir}/oregano
 %{_examplesdir}/%{name}
