@@ -1,15 +1,13 @@
 Summary:	Oregano - schematic capture and simulation of electrical circuits
 Name:		oregano
-Version:	0.14
-Release:	2
+Version:	0.15
+Release:	1
 License:	GPL
 Group:		Applications/Engineering
 Group(pl):	Aplikacje/In¿ynierskie
 Source0:	http://www.dtek.chalmers.se/~d4hult/oregano/download/%{name}-%{version}.tar.gz
-Patch0:		oregano-applnk.patch
 URL:		http://www.dtek.chalmers.se/~d4hult/oregano/
 BuildRequires:	gettext-devel
-BuildRequires:	automake
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	libxml-devel >= 1.5.0
 BuildRequires:	libglade-devel >= 0.8
@@ -26,11 +24,9 @@ capture.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 gettextize --copy --force
-automake
 LDFLAGS="-s"; export LDFLAGS
 %configure
 make
@@ -38,7 +34,9 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make DESTDIR=$RPM_BUILD_ROOT install
+make install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	Applicationsdir=%{_applnkdir}/Applications
 
 gzip -9nf ChangeLog NEWS README TODO
 
