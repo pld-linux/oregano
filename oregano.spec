@@ -18,9 +18,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Oregano is intended to be an application for schematic capture and
-simulation of electrical circuits. The actual simulation is performed by
-Berkeley Spice. Oregano can still be used without Spice, for schematic
-capture.
+simulation of electrical circuits. The actual simulation is performed
+by Berkeley Spice. Oregano can still be used without Spice, for
+schematic capture.
 
 %prep
 %setup -q
