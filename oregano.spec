@@ -20,6 +20,7 @@ Conflicts:	applnk < 1.5.18
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
+%define		_desktopdir	%{_applnkdir}/Scientific/Engineering
 
 %description
 Oregano is intended to be an application for schematic capture and
@@ -50,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	Applicationsdir=%{_applnkdir}/Scientific/Engineering \
+	Applicationsdir=%{_desktopdir} \
 	samplesdir=%{_examplesdir}/%{name}
 
 %find_lang %{name} --with-gnome
@@ -62,7 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Scientific/Engineering/oregano.desktop
+%{_desktopdir}/oregano.desktop
 %{_datadir}/mime-info/*
 %{_pixmapsdir}/*
 %{_datadir}/oregano
