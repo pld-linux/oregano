@@ -1,6 +1,6 @@
 Summary:	Oregano - schematic capture and simulation of electrical circuits
 Summary(it):	Oregano - disegno e simulazione di circuiti elettrici
-Summary(pl):	Oregano - zdobywanie schematów i symulacja obwodów elektrycznych
+Summary(pl):	Oregano - tworzenie schematów i symulacja obwodów elektrycznych
 Summary(sv):	Oregano - kretsschemariting och simulering av elektriska kretsar
 Name:		oregano
 Version:	0.23
@@ -28,9 +28,9 @@ by Berkeley Spice. Oregano can still be used without Spice, for
 schematic capture.
 
 %description -l pl
-Oregano jest aplikacj± do zdobywania schematów i symulacji obwodów
+Oregano jest aplikacj± do tworzenia schematów i symulacji obwodów
 elektrycznych. W³a¶ciwa symulacja jest robiona przez Berkeley Spice.
-Bez Spice nadal mo¿na u¿ywaæ Oregano - do schematów.
+Bez Spice nadal mo¿na u¿ywaæ Oregano - do rysowania schematów.
 
 %prep
 %setup -q
