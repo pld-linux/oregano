@@ -8,14 +8,16 @@ Group:		Applications/Engineering
 Group(de):	Applikationen/Ingenieurwesen
 Group(pl):	Aplikacje/In¿ynierskie
 Source0:	ftp://ftp.codefactory.se/pub/software/oregano/%{name}-%{version}.tar.gz
+patch0:		%{name}-ac_fix.patch
 URL:		http://oregano.codefactory.se/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel >= 1.0.0
+BuildRequires:	gnome-print-devel >= 0.28
 BuildRequires:	libxml-devel >= 1.8.10
 BuildRequires:	libglade-devel >= 0.8
-BuildRequires:	gnome-print-devel >= 0.28
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -33,9 +35,12 @@ Bez Spice nadal mo¿na u¿ywaæ Oregano - do schematów.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+rm -f missing
 gettextize --copy --force
+libtoolize --copy --force
 aclocal -I macros
 autoconf
 automake -a -c
