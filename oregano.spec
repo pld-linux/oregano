@@ -37,7 +37,7 @@ Bez Spice nadal mo¿na u¿ywaæ Oregano - do schematów.
 rm -f missing
 %{__gettextize}
 %{__libtoolize}
-aclocal -I macros
+%{__aclocal} -I macros
 %{__autoconf}
 %{__automake}
 %configure
