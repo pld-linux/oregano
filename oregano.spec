@@ -1,7 +1,7 @@
 Summary:	Oregano - schematic capture and simulation of electrical circuits
 Name:		oregano
 Version:	0.16.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Engineering
 Group(pl):	Aplikacje/In¿ynierskie
@@ -36,7 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 
 make install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	Applicationsdir=%{_applnkdir}/Applications
+	Applicationsdir=%{_applnkdir}/Office/Misc
 
 gzip -9nf ChangeLog NEWS README TODO
 
@@ -49,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Applications/oregano.desktop
+%{_applnkdir}/Office/Misc/oregano.desktop
 %{_datadir}/mime-info/*
 %{_datadir}/pixmaps/*
 %{_datadir}/oregano
