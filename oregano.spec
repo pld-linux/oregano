@@ -5,8 +5,6 @@ Version:	0.23
 Release:	3
 License:	GPL
 Group:		Applications/Engineering
-Group(de):	Applikationen/Ingenieurwesen
-Group(pl):	Aplikacje/In¿ynierskie
 Source0:	ftp://ftp.codefactory.se/pub/software/oregano/%{name}-%{version}.tar.gz
 URL:		http://oregano.codefactory.se/
 BuildRequires:	autoconf
