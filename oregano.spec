@@ -1,58 +1,60 @@
-%define  ver     0.12
-%define  RELEASE 1
-%define  rel     %{?CUSTOM_RELEASE} %{!?CUSTOM_RELEASE:%RELEASE}
-%define  prefix  /usr
+Summary:	Oregano - schematic capture and simulation of electrical circuits
+Name:		oregano
+Version:	0.12
+Release:	1
+License:	GPL
+Group:		Applications/Engineering
+Group(pl):	Aplikacje/In¿ynierskie
+Source0:	http://www.dtek.chalmers.se/~d4hult/oregano/%{name}-%{version}.tar.gz
+Patch0:		oregano-applnk.patch
+URL:		http://www.dtek.chalmers.se/~d4hult/oregano/
+BuildRequires:	gettext-devel
+BuildRequires:	automake
+BuildRequires:	gnome-libs-devel >= 1.0.0
+BuildRequires:	libxml-devel >= 1.5.0
+BuildRequires:	libglade-devel >= 0.8
+BuildRequires:	gnome-print-devel >= 0.8
+BuildRoot:	/tmp/%{name}-%{version}-root
 
-Summary: Oregano
-Name: 		oregano
-Version: 	%ver
-Release: 	%rel
-Copyright: 	GPL
-Group: 		Applications/Engineering
-Source: 	http://www.dtek.chalmers.se/~d4hult/oregano/oregano-%{ver}.tar.gz
-Url:		http://www.dtek.chalmers.se/~d4hult/oregano
-BuildRoot:	/var/tmp/oregano-%{PACKAGE_VERSION}-root
-Docdir: 	%{prefix}/doc
 
-Requires: gnome-libs >= 1.0.0
-Requires: libxml >= 1.5.0
-Requires: libglade >= 0.8
-Requires: gnome-print >= 0.8
+%define		_prefix		/usr/X11R6
+%define		_applnkdir	%{_datadir}/applnk
 
 %description
-Oregano, schematic capture and simulation of electrical circuits.
+Oregano is intended to be an application for schematic capture and
+simulation of electrical circuits. The actual simulation is performed by
+Berkeley Spice. Oregano can still be used without Spice, for schematic
+capture.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
-%ifarch alpha
-  MYARCH_FLAGS="--host=alpha-redhat-linux"
-%endif
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%prefix $MYARCH_FLAGS --sysconfdir=/etc
-
-if [ "$SMP" != "" ]; then
-	make -j$SMP "MAKE=make -j$SMP"
-else
-	make
-fi
+gettextize --copy --force
+automake
+LDFLAGS="-s"; export LDFLAGS
+%configure
+make
 
 %install
+rm -rf $RPM_BUILD_ROOT
 
-make prefix=$RPM_BUILD_ROOT%{prefix} sysconfdir=$RPM_BUILD_ROOT/etc install
+make DESTDIR=$RPM_BUILD_ROOT install
+
+gzip -9nf ChangeLog NEWS README TODO
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
-%defattr(-, root, root)
-
-%doc ChangeLog NEWS README COPYING TODO
-
-%{prefix}/bin/*
-%{prefix}/share/locale/*/*
-%{prefix}/share/gnome/help/oregano/*/*
-%{prefix}/share/gnome/apps/Applications/oregano.desktop
-%{prefix}/share/mime-info/*
-%{prefix}/share/pixmaps/*
-%{prefix}/share/oregano/*
+%files -f %{name}.lang
+%defattr(644,root,root,755)
+%doc *.gz
+%attr(755,root,root) %{_bindir}/*
+%{_datadir}/gnome/help/oregano
+%{_applnkdir}/Applications/oregano.desktop
+%{_datadir}/mime-info/*
+%{_datadir}/pixmaps/*
+%{_datadir}/oregano
