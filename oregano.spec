@@ -50,7 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	Applicationsdir=%{_applnkdir}/Office/Misc \
+	Applicationsdir=%{_applnkdir}/Scientific/Misc \
 	samplesdir=%{_examplesdir}/%{name}
 
 gzip -9nf ChangeLog NEWS README
@@ -64,7 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Office/Misc/oregano.desktop
+%{_applnkdir}/Scientific/Misc/oregano.desktop
 %{_datadir}/mime-info/*
 %{_pixmapsdir}/*
 %{_datadir}/oregano
