@@ -14,10 +14,9 @@ BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	libxml-devel >= 1.5.0
 BuildRequires:	libglade-devel >= 0.8
 BuildRequires:	gnome-print-devel >= 0.14
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
-%define		_applnkdir	%{_datadir}/applnk
 
 %description
 Oregano is intended to be an application for schematic capture and
