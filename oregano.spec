@@ -13,7 +13,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel >= 1.0.0
-BuildRequires:	gnome-print-devel >= 0.28
+BuildRequires:	gnome-print-devel >= 0.30
 BuildRequires:	libxml-devel >= 1.8.10
 BuildRequires:	libglade-devel >= 0.8
 BuildRequires:	libtool
