@@ -1,14 +1,13 @@
 Summary:	Oregano - schematic capture and simulation of electrical circuits
 Summary(pl):	Oregano - zdobywanie schematów i symulacja obwodów elektrycznych
 Name:		oregano
-Version:	0.22
-Release:	4
+Version:	0.23
+Release:	1
 License:	GPL
 Group:		Applications/Engineering
 Group(de):	Applikationen/Ingenieurwesen
 Group(pl):	Aplikacje/In¿ynierskie
 Source0:	ftp://ftp.codefactory.se/pub/software/oregano/%{name}-%{version}.tar.gz
-patch0:		%{name}-ac_fix.patch
 URL:		http://oregano.codefactory.se/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -35,7 +34,6 @@ Bez Spice nadal mo¿na u¿ywaæ Oregano - do schematów.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 rm -f missing
