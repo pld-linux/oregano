@@ -17,7 +17,6 @@ BuildRequires:	libtool
 BuildRequires:	libxml-devel >= 1.8.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 Oregano is intended to be an application for schematic capture and
