@@ -1,7 +1,7 @@
 Summary:	Oregano - schematic capture and simulation of electrical circuits
 Name:		oregano
 Version:	0.12
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Engineering
 Group(pl):	Aplikacje/In¿ynierskie
@@ -13,7 +13,7 @@ BuildRequires:	automake
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	libxml-devel >= 1.5.0
 BuildRequires:	libglade-devel >= 0.8
-BuildRequires:	gnome-print-devel >= 0.8
+BuildRequires:	gnome-print-devel >= 0.12
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 
