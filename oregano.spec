@@ -6,6 +6,7 @@ Release:	5
 License:	GPL
 Group:		Applications/Engineering
 Source0:	ftp://ftp.codefactory.se/pub/software/oregano/%{name}-%{version}.tar.gz
+# Source0-md5:	226b84622dd1b877ee87228ba74d68d1
 URL:		http://oregano.codefactory.se/
 BuildRequires:	autoconf
 BuildRequires:	automake
