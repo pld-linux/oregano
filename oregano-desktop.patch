@@ -1,0 +1,18 @@
+--- oregano-0.23/oregano.desktop~	Thu Jul 15 15:17:00 2004
++++ oregano-0.23/oregano.desktop	Thu Jul 15 15:17:00 2004
+@@ -2,9 +2,13 @@
+ Name=Oregano
+ Name[sv]=Oregano
+ Comment=Schematic capture and simulation of electrical circuits
+-Comment[sv]=Kretsschemariting och simulering av elektriska kretsar
+ Comment[it]=Disegno e simulazione di circuiti elettrici
++Comment[pl]=Projektowanie i symulacja obwodów elektrycznych
++Comment[sv]=Kretsschemariting och simulering av elektriska kretsar
+ Exec=oregano
+ Icon=gnome-unknown.png
+-Terminal=0
++Terminal=false
+ Type=Application
++Categories=;
++Encoding=UTF-8
++# vi: encoding=utf-8
