@@ -1,7 +1,7 @@
 Summary:	Oregano - schematic capture and simulation of electrical circuits
 Name:		oregano
 Version:	0.22
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Engineering
 Group(de):	Applikationen/Ingenieurwesen
