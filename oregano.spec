@@ -3,22 +3,27 @@ Summary(it):	Oregano - disegno e simulazione di circuiti elettrici
 Summary(pl):	Oregano - tworzenie schematów i symulacja obwodów elektrycznych
 Summary(sv):	Oregano - kretsschemariting och simulering av elektriska kretsar
 Name:		oregano
-Version:	0.23
-Release:	9
+Version:	0.40.4
+Release:	0.1
 License:	GPL
 Group:		Applications/Engineering
-Source0:	ftp://ftp.codefactory.se/pub/software/oregano/%{name}-%{version}.tar.gz
-# Source0-md5:	226b84622dd1b877ee87228ba74d68d1
-Patch0:		%{name}-desktop.patch
-URL:		http://people.imendio.com/richard/oregano/
+Source0:	http://gforge.lug.fi.uba.ar/frs/download.php/61/%{name}-%{version}.tar.gz
+# Source0-md5:	12c285faca69cbaf97cc1f5242a9a99b
+#Patch0:		%{name}-desktop.patch
+URL:		http://arrakis.gforge.lug.fi.uba.ar/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
-BuildRequires:	gnome-libs-devel >= 1.0.0
-BuildRequires:	gnome-print-devel >= 0.30
-BuildRequires:	libglade-gnome-devel >= 0.8
+BuildRequires:	libxml2-devel >= 2.6
+BuildRequires:	libgnomeprint-devel >= 2.10
+BuildRequires:	libgnomeprintui-devel >= 2.10
+BuildRequires:	libgnome >= 2.10
+BuildRequires:	gnome-common >= 2.6
+BuildRequires:	gtksourceview-devel >= 1.2
+BuildRequires:	popt-devel >= 1.10
+BuildRequires:	cairo-devel >= 0.4
+BuildRequires:	libpixman-devel >= 0.1.4
 BuildRequires:	libtool
-BuildRequires:	libxml-devel >= 1.8.10
+
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,7 +39,7 @@ Bez Spice nadal mo¿na u¿ywaæ Oregano - do rysowania schematów.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 
 %build
 rm -f missing
