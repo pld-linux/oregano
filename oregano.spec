@@ -1,7 +1,7 @@
 Summary:	Oregano - schematic capture and simulation of electrical circuits
-Summary(it.UTF-8):   Oregano - disegno e simulazione di circuiti elettrici
-Summary(pl.UTF-8):   Oregano - tworzenie schematów i symulacja obwodów elektrycznych
-Summary(sv.UTF-8):   Oregano - kretsschemariting och simulering av elektriska kretsar
+Summary(it.UTF-8):	Oregano - disegno e simulazione di circuiti elettrici
+Summary(pl.UTF-8):	Oregano - tworzenie schematów i symulacja obwodów elektrycznych
+Summary(sv.UTF-8):	Oregano - kretsschemariting och simulering av elektriska kretsar
 Name:		oregano
 Version:	0.23
 Release:	9
