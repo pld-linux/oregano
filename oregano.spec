@@ -3,21 +3,14 @@ Summary(it.UTF-8):	Oregano - disegno e simulazione di circuiti elettrici
 Summary(pl.UTF-8):	Oregano - tworzenie schematów i symulacja obwodów elektrycznych
 Summary(sv.UTF-8):	Oregano - kretsschemariting och simulering av elektriska kretsar
 Name:		oregano
-Version:	0.23
-Release:	9
+Version:	0.69.0
+Release:	1
 License:	GPL
 Group:		Applications/Engineering
-Source0:	ftp://ftp.codefactory.se/pub/software/oregano/%{name}-%{version}.tar.gz
-# Source0-md5:	226b84622dd1b877ee87228ba74d68d1
+Source0:	http://gforge.lug.fi.uba.ar/frs/download.php/86/%{name}-%{version}.tar.gz
+# Source0-md5:	f98abc5c79cc733b49cd07995afc9c1e
 Patch0:		%{name}-desktop.patch
 URL:		http://arrakis.gforge.lug.fi.uba.ar/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	gettext-devel
-BuildRequires:	gnome-libs-devel >= 1.0.0
-BuildRequires:	gnome-print-devel >= 0.30
-BuildRequires:	libglade-gnome-devel >= 0.8
-BuildRequires:	libtool
 BuildRequires:	libxml-devel >= 1.8.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,25 +27,20 @@ Bez Spice nadal można używać Oregano - do rysowania schematów.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 
 %build
 rm -f missing
-%{__gettextize}
-%{__libtoolize}
-%{__aclocal} -I macros
-%{__autoconf}
-%{__automake}
-%configure
-%{__make}
+scons PREFIX=/usr
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	Applicationsdir=%{_desktopdir} \
-	samplesdir=%{_examplesdir}/%{name}
+install -d $RPM_BUILD_ROOT
+
+scons install \
+	DESTDIR=$RPM_BUILD_ROOT/ \
+	PREFIX=/usr
 
 %find_lang %{name} --with-gnome
 
@@ -61,10 +49,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc ChangeLog NEWS README
+%doc Changelog NEWS README
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/oregano.desktop
 %{_datadir}/mime-info/*
 %{_pixmapsdir}/*
 %{_datadir}/oregano
-%{_examplesdir}/%{name}
