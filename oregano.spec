@@ -27,7 +27,7 @@ Bez Spice nadal można używać Oregano - do rysowania schematów.
 
 %prep
 %setup -q
-#%patch0 -p1
+#%%patch0 -p1
 
 %build
 rm -f missing
